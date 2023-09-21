@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gym Website Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+  <style>
+    .wow:first-child {
+      visibility: hidden;
+    }
+  </style>
+  
+</head>
+
+<header>
+    <div class="container">
+        <div class="logo">
+          <a href="">Fitness Sudio : <span>Iron Paradise </span></a>
+        </div>
+        <a href="javascript:void(0)" class="ham-burger">
+          <span></span>	
+          <span></span>
+        </a>
+        <div class="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Services</a></li>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#price">Price</a></li>
+                <li><a href="#trainee">Trainee</a></li>
+                <li><a href="#booknow">Book Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+<section class="home wow flash" id="home">
+    <div class="container">
+          <h1 class="wow slideInLeft" data-wow-delay="1s">Welcome <span>To The Iron Paradise.</span></h1>
+          <h1 class="wow slideInRight" data-wow-delay="1s">We go <span>Jim !!!</span></h1>
+    </div>
+
+</section>
+<!-- jquery -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){
+
+      $(".ham-burger, .nav ul li a").click(function(){
+       
+        $(".nav").toggleClass("open")
+
+        $(".ham-burger").toggleClass("active");
+      })      
+      $(".accordian-container").click(function(){
+      	$(".accordian-container").children(".body").slideUp();
+      	$(".accordian-container").removeClass("active")
+      	$(".accordian-container").children(".head").children("span").removeClass("fa-angle-down").addClass("fa-angle-up")
+      	$(this).children(".body").slideDown();
+      	$(this).addClass("active")
+      	$(this).children(".head").children("span").removeClass("fa-angle-up").addClass("fa-angle-down")
+      })
+
+       $(".nav ul li a, .go-down").click(function(event){
+         if(this.hash !== ""){
+
+              event.preventDefault();
+
+              var hash=this.hash; 
+
+              $('html,body').animate({
+                scrollTop:$(hash).offset().top
+              },800 , function(){
+                 window.location.hash=hash;
+              });
+
+              // add active class in navigation
+              $(".nav ul li a").removeClass("active")
+              $(this).addClass("active")
+         }
+      })
+})
+
+</script>
+<script src="js/wow.min.js"></script>
+<script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       0,
+      }
+    );
+    wow.init();
+  </script>
+
+</html>
