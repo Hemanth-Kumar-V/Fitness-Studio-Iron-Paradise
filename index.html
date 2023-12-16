@@ -456,27 +456,42 @@
 	   <div class="content">
 		   <div class="box form wow slideInLeft">
 			<h2 style="color:rgb(250, 250, 250);">Book Now :</h2><br>
-			  <form action="booknow.php" method="post" name="submit-to-google-sheet"  >
+			  <form action="connect.php" method='post'  >
 				 <input type="text" name = "fullname" placeholder="Enter your Full Name" required>
-				 <input type="email" name="email" placeholder="Enter your Email id" required>
+				 
+				 <input type="text" name="email" placeholder="Enter your Email id" required>
+				 
 				 <p style="color:rgb(250, 250, 250);">Choose your Gender:</p>
-				 <select  name = "gender"id="gender" required>
-					<option>Select</option>
-				   <option value = "M">Male</option>
-				   <option value = "F">Female</option>
-				 </select><br><br>
-				 <input type="tel" name="mobile" placeholder="Enter Mobile No." required>
-				 <input type="text" name="fulladdress" placeholder="Enter your Address" required>
-				 <p style="color:rgb(250, 250, 250);">Date of Birth:</p>
+				 <label>
+					<input type="radio" name="gender" value="M" required>
+					Male
+				</label>
+				
+				<label>
+					<input type="radio" name="gender" value="F" required>
+					Female
+				</label>
+				<br><br>
+				 
+				<input type="number" name="mobile" placeholder="Enter Mobile No." required>
+				
+				<input type="text" name="fulladdress" placeholder="Enter your Address" required>
+				
+				<p style="color:rgb(250, 250, 250);">Date of Birth:</p>
  				 <input type="date" name="DOB" placeholder="Calendar" required>
-				  <p style="color:rgb(250, 250, 250);">Choose your Membership plan:</p>
-				  <select name = "plan"id="plans" required>
-					<option>Select</option>
-					<option value="M">Monthly</option>
-					<option value="Y">Yearly</option>
-				  </select><br><br>
-				 <button type="submit" onclick="location.href='submit.html' ">Submit</button>
-				 <button type="submit" onclick="location.href='https://pages.razorpay.com/pl_MeUAgujUarkTHV/view' ">Pay Now</button>
+				
+				<p style="color:rgb(250, 250, 250);">Choose your Membership plan:</p>
+				  <label>
+					<input type="radio" name="plan" value="Monthly" required> Monthly
+				</label>
+				
+				<label>
+					<input type="radio" name="plan" value="Yearly" required> Yearly
+				</label>
+				<br><br>
+						<button type = "submit">Submit</button>
+				 <!-- <button type="submit" onclick="location.href='submit.html' ">Submit</button> -->
+				 <!-- <button type="submit" id="paynow" onclick="location.href='https://pages.razorpay.com/pl_MeUAgujUarkTHV/view' ">Pay Now</button> -->
 				 <!-- <button type="button" onclick="location.href='https://docs.google.com/spreadsheets/d/14JZAYd6t5lGSIPiuIU52T_NXTLvFD-Mc4dCbaKyD00o/edit?usp=sharing'">Go To Link</button> -->
 			</form>
 			 <span id="msg"> </span>
@@ -493,7 +508,7 @@
      <div class="container">
         <div class="content">
             <div class="box form wow slideInLeft">
-               <form>
+               <form action = "connect.php" method="post">
                   <input type="text" placeholder="Enter Name">
                   <input type="text" placeholder="Enter Email">
                   <input type="text" placeholder="Enter Mobile">

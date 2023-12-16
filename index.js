@@ -1,7 +1,7 @@
 // npm init -y
 // npm i express
 // npm i mongoose
-// YT video 12:51
+// YT video 12:51 17:53
 
 //npm i fs --save
 const fs = require("node:fs")
@@ -10,7 +10,7 @@ const mongoose = require("mongoose")
 
 
 const app = express()
-const port = 3000
+const port = 5500
 
 const User = require("./model/user")
 

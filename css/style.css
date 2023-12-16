@@ -2,6 +2,21 @@
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+label {
+    display: inline-block;
+    margin: bottom 5px;
+    font-size: 16px; 
+	color: white;
+	
+	/* Adjust the text size as needed */
+}
+
+input[type="radio"] {
+    margin-right: 5px; 
+    transform: scale(0.5); /* Adjust the radio button size as needed */
+}
+
+
 body{
 	margin:0;
 	padding:0;
@@ -14,7 +29,10 @@ body{
 	padding:0;
 	font-family: 'Oswald', sans-serif;
 }
-
+/* #paynow
+{
+	display: block;
+} */
 #msg{
 	color: #c92020;
 }
