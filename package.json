@@ -1,0 +1,17 @@
+{
+  "name": "iron-paradise",
+  "version": "1.0.0",
+  "description": "This repository contains the source code for a gym website, implemented as a single page application (SPA) using HTML, CSS, and JavaScript.\r Website Link : https://hemanth-kumar-v.github.io/Fitness-Studio-Iron-Paradise/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "mongoose": "^8.0.3"
+  }
+}
