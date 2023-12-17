@@ -21,7 +21,7 @@
         if (!$execval) {
             echo "Error: " . $stmt->error;
         } else {
-            echo "Registration successfully...";
+            header("Location: submit.html");
         }
 
 		$stmt->close();

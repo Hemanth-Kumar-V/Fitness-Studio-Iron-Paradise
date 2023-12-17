@@ -33,6 +33,7 @@
  	 			<li><a href="#schedule">Schedule</a></li>
  	 			<li><a href="#price">Plans</a></li>
 				  <li><a href="#trainee">Trainer</a></li>
+				  <li><a href="#bmi-calculator">BMI Calculator</a></li>
 				  <li><a href="#booknow">Book Now</a></li>
  	 			<li><a href="#contact">Contact</a></li>
  	 		</ul>
@@ -448,6 +449,65 @@
 </section>
 <!-- End Trainer -->
 
+ <!-- Start of  BMI calculator  -->
+ <!-- Add this section where you want to display the BMI calculator -->
+ <section class="bmi-calculator" id="bmi-calculator">
+    <h2>BMI Calculator</h2>
+    <div>
+        <label  for="height">Height (cm):</label>
+        <input type="number" id="height" placeholder="Enter height in cm">
+    </div>
+    <div>
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" placeholder="Enter weight in kg">
+    </div>
+    <button id="bmi_button" onclick="calculateBMI()">Calculate BMI</button>
+    <div id="result"></div>
+	<div class="bmi-chart-container">
+        <img id="bmi_img" src="images/bmi_meter.jpg" alt="BMI Chart" style="max-width: 80%;">
+    </div>
+</section>
+
+<!-- Include the JavaScript code directly within the HTML -->
+<script>
+    // Add this JavaScript code to calculate BMI
+    function calculateBMI() {
+        // Get height and weight values
+        var height = document.getElementById("height").value;
+        var weight = document.getElementById("weight").value;
+
+        // Validate input
+        if (height === "" || weight === "") {
+            alert("Please enter both height and weight.");
+            return;
+        }
+
+        // Convert height to meters
+        var heightInMeters = height / 100;
+
+        // Calculate BMI
+        var bmi = weight / (heightInMeters * heightInMeters);
+
+        // Display result and message
+        var resultElement = document.getElementById("result");
+        resultElement.innerHTML = "Your BMI is: " + bmi.toFixed(2) + "<br>" + getBMIMessage(bmi);
+    }
+
+    // Function to get BMI message
+    function getBMIMessage(bmi) {
+        if (bmi < 18.5) {
+            return "You are underweight.";
+        } else if (bmi >= 18.5 && bmi < 25) {
+            return "You have a normal weight.";
+        } else if (bmi >= 25 && bmi < 30) {
+            return "You are overweight.";
+        } else {
+            return "You are obese.";
+        }
+    }
+</script>
+<!-- End of BMI Calculator -->
+
 
 
  <!-- Start Book Now -->
@@ -503,16 +563,21 @@
 
 
 
+
+
  <!-- Start Contact -->
   <section class="contact" id="contact">
      <div class="container">
         <div class="content">
             <div class="box form wow slideInLeft">
-               <form action = "contact.php" method="post">
+               <form action = "https://formsubmit.co/hemanthdsatm054@gmail.com" method="post">
                   <input type="text" name="name" placeholder="Enter Name">
-                  <input type="text" name="email" placeholder="Enter Email">
+                  <input type="email" name="email" placeholder="Enter Email">
                   <input type="text" name="mobile" placeholder="Enter Mobile">
                   <textarea name="message" placeholder="Enter Message"></textarea>
+				  <input type="hidden" name="_captcha" value="false">
+				  <input type="hidden" name="_next" value="http://localhost/Iron-Paradise/messaging.html">
+				  <input type="hidden" name="_template" value="table">
                   <button type="submit">Send Message</button>
                </form>
             </div>
@@ -538,6 +603,8 @@
      </div>
   </section>
  <!-- End Contact -->
+
+
 
 
 
