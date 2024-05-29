@@ -4,7 +4,7 @@
 	<title>Gym Website Template</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/animate.css?v=<?php echo time(); ?>">
-	<link rel="stylesheet" type="text/css" href="css/style.css?v=<?php echo time(); ?>"">
+	<link rel="stylesheet" type="text/css" href="css/style.css?v=<?php echo time(); ?>">
   <style>
     .wow:first-child {
       visibility: hidden;
@@ -451,6 +451,7 @@
 
  <!-- Start of  BMI calculator  -->
  <!-- Add this section where you want to display the BMI calculator -->
+ <div class="box form wow slideInLeft">
  <section class="bmi-calculator" id="bmi-calculator">
     <h2>BMI Calculator</h2>
     <div>
@@ -467,6 +468,7 @@
         <img id="bmi_img" src="images/bmi_meter.jpg" alt="BMI Chart" style="max-width: 80%;">
     </div>
 </section>
+</div>
 
 <!-- Include the JavaScript code directly within the HTML -->
 <script>
@@ -501,10 +503,13 @@
             return "You have a normal weight.";
         } else if (bmi >= 25 && bmi < 30) {
             return "You are overweight.";
-        } else {
+		}  else if (bmi >= 30 && bmi < 40) {
             return "You are obese.";
+        } else {
+            return "You are severely obese.";
         }
     }
+
 </script>
 <!-- End of BMI Calculator -->
 
@@ -519,7 +524,7 @@
 			  <form action="connect.php" method='post'  >
 				 <input type="text" name = "fullname" placeholder="Enter your Full Name" required>
 				 
-				 <input type="text" name="email" placeholder="Enter your Email id" required>
+				 <input type="email" name="email" placeholder="Enter your Email id" required>
 				 
 				 <p style="color:rgb(250, 250, 250);">Choose your Gender:</p>
 				 <label>
@@ -579,14 +584,14 @@
      <div class="container">
         <div class="content">
             <div class="box form wow slideInLeft">
-               <form action = "https://formsubmit.co/hemanthdsatm054@gmail.com" method="post">
+               <form action = "https://formspree.io/f/moqgrqrd" method="POST">
                   <input type="text" name="name" placeholder="Enter Name">
                   <input type="email" name="email" placeholder="Enter Email">
                   <input type="text" name="mobile" placeholder="Enter Mobile">
                   <textarea name="message" placeholder="Enter Message"></textarea>
-				  <input type="hidden" name="_captcha" value="false">
+				  <!-- <input type="hidden" name="_captcha" value="false"> -->
 				  <input type="hidden" name="_next" value="http://localhost/Iron-Paradise/messaging.html">
-				  <input type="hidden" name="_template" value="table">
+				  <!-- <input type="hidden" name="_template" value="table"> -->
                   <button type="submit">Send Message</button>
                </form>
             </div>
@@ -596,7 +601,7 @@
                   <div class="info">
                       <ul>
                           <li><span class="fa fa-map-marker"></span>JP nagar 5th phase, Bengaluru </li>
-                          <li><span class="fa fa-phone"></span>+91 8088947397</li>
+                          <li><span class="fa fa-phone"></span>+91 8088347397</li>
                           <li><span class="fa fa-envelope"></span> fitnessstudio@fit.com</li>
                       </ul>
                   </div>
@@ -670,7 +675,7 @@
     wow.init();
   </script>
 
-<script>
+<!-- <script>
 	const scriptURL = 'https://script.google.com/macros/s/AKfycbywL5TXxOwsVdOSxmuDH6kpBRt6FQuGShRp8sBlkC57PL_ByDkEIOMGlez2rz38Cdgk/exec'
 	const form = document.forms['submit-to-google-sheet']
     const msg=document.getElementById("msg")
@@ -686,7 +691,7 @@
 		})
 		.catch(error => console.error('Error!', error.message))
 	})
-  </script>
+  </script> -->
 
 </body>
 </html>
